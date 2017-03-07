@@ -9193,14 +9193,49 @@ module.exports = Vue$3;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js__ = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__("./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__("./node_modules/vue-router/dist/vue-router.esm.js");
 
 
-var app = new __WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js___default.a({
-  el: '#root',
-  data: {
-    message: 'Hello Vue!'
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js___default.a.use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["default"]);
+__WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["default"]);
+
+const Counter = {
+  template: `<div>{{ count }}</div>`,
+  computed: {
+    count() {
+      return this.$store.state.count;
+    }
+  }
+};
+
+const Foo = { template: '<div>foo</div>' };
+const Bar = { template: '<div>bar</div>' };
+const Index = { template: '<div>11111111111111111</div>' };
+
+const routes = [{ path: '/', component: Index }, { path: '/foo', component: Foo }, { path: '/bar', component: Bar }];
+const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["default"]({
+  routes
+});
+
+const store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["default"].Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment(state) {
+      state.count++;
+    }
   }
 });
+
+var app = new __WEBPACK_IMPORTED_MODULE_0_vue_dist_vue_common_js___default.a({
+  store,
+  router,
+  template: '<div><p><router-link to="/">Index</router-link> <router-link to="/foo">Go to Foo</router-link><router-link to="/bar">Go to Bar</router-link></p><router-view></router-view></div>'
+}).$mount('#root');
 
 /***/ })
 
