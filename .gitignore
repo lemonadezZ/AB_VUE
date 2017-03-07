@@ -1,6 +1,9 @@
 vendor/
 node_modules/
 
+#sass 
+.sass-cache/
+
 # Laravel 4 specific
 bootstrap/compiled.php
 app/storage/
