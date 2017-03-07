@@ -1,0 +1,27 @@
+{
+  "name": "ab_vue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lemonadezZ/AB_VUE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lemonadezZ/AB_VUE/issues"
+  },
+  "homepage": "https://github.com/lemonadezZ/AB_VUE#readme",
+  "dependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "vue": "^2.2.1",
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1",
+    "webpack": "^2.2.1"
+  }
+}
